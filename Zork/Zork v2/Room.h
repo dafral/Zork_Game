@@ -3,6 +3,8 @@
 class Room {
 
 public:
-	char name[80], desc[200];
+	char name[80], desc[400];
 	Exit* exits;
+
+
 };
