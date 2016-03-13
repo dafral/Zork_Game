@@ -5,9 +5,10 @@
 
 void main(void){
 	bool game = true;
-	CreateMap();
+	World map;
+	map.CreateMap();
 	do {
-		game = Play();
+		game = map.Play();
 	} while (game == true);
 
 }
