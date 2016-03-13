@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Exit.h"
-
 class Room {
 
 public:

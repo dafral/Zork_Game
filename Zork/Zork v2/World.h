@@ -2,6 +2,8 @@
 
 #include <string.h>
 #include "Room.h"
+#include "Exit.h"
+#include "Player.h"
 
 class World{
 
