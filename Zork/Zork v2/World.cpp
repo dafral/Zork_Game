@@ -188,29 +188,28 @@ void World::CreateMap(){
 bool World::Play(){
 	char option = 'l';
 	int i;
-
-	do{
-		scanf_s("%c", option);
-
-		if (option == 'q')
-			return false;
-
-		else if (option == 'l'){
-			printf("%s\n\n", player->current_room->name);
-			printf("%s\n", player->current_room->desc);
-		}
 	
-		for (i = 0; i < 24; i++){
-			if (exits[i].source == player->current_room){
-				if (option == exits[i].direction)
-					player->current_room = exits[i].destination;
-				return true;
+	printf("%s\n\n", player->current_room->name);
+	printf("%s\n", player->current_room->desc);
 
-			}
-		}
-
-	} while (option == 'q' || option == 'l' || option == 'n' || option == 'w' || option == 'e' || option == 's');
+	scanf_s("%c", option);
 	
+	if (option == 'q')
+		return false;
+
+	else if (option == 'l'){
+		printf("%s\n\n", player->current_room->name);
+		printf("%s\n", player->current_room->desc);
+	}
+	
+	for (i = 0; i < 24; i++){
+		if (exits[i].source == player->current_room){
+			if (option == exits[i].direction)
+				player->current_room = exits[i].destination;
+			return true;
+			
+		}
+	}
 }
 
 
