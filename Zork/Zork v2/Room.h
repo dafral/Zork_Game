@@ -1,9 +1,14 @@
-#pragma once
+#ifndef __ROOM__
+#define __ROOM__
 
-class Room {
+#include "Entity.h"
+
+class Room : public Entity{
 
 public:
-	char name[80], desc[400];
+		
 
 
 };
+
+#endif

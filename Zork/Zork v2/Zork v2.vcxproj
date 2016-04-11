@@ -71,6 +71,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="Exit.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />

@@ -1,22 +1,29 @@
-#pragma once
+#ifndef __EXIT__
+#define __EXIT__
 
 #include <stdio.h>
 #include "Room.h"
+#include "Entity.h"
 
-class Exit{
+
+class Exit : public Entity{
 
 public:
 	bool open;
-	char name[80], direction;
+	char direction;
 	Room* destination;
 	Room* source;
 	
-
-public:
-	void LookExit(const char& player_dir){
-		printf("");
+	Exit::Exit(){
+		destination = new Room;
+		source = new Room;
 	}
 	
-	void SearchExits();
+	Exit::~Exit(){
+		delete destination;
+		delete source;
+	}
 
 };
+
+#endif

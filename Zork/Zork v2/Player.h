@@ -1,10 +1,11 @@
-#pragma once
+#ifndef __PLAYER__
+#define __PLAYER__
 
 #include "Room.h"
 #include <stdio.h>
 #include <string.h>
 
-class Player{
+class Player : public Entity{
 
 public:
 	Room* current_room;
@@ -16,3 +17,4 @@ public:
 	Player Player::GoDirection(const Room &destination);
 };
 
+#endif
