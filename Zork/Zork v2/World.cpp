@@ -6,38 +6,35 @@
 
 
 bool World::Play(){
-	int i;
+	int i, j = 0;
 	char option;
 	
-	for (i = 0; i < 12; i++)
-		printf("%s\n", rooms[i].name);
+	while (player->current_room != rooms[j].name) j++;
 
-	for (i = 0; i < 24; i++)
-		printf("%s\n", exits[i].destination->name);
+	printf("%s\n", rooms[j].name);
+	printf("%s\n", rooms[j].desc);
+	
+	scanf_s("%c%*c", &option);
 
-	printf("%s\n\n", player->current_room->name);
-	printf("%s\n", player->current_room->desc);
-
-	scanf_s("%c", &option);
+	while (option != 'n' && option != 'e' && option != 'w' && option != 's'){
+		printf("Invalid command. Choose another one.\n");
+		scanf_s("%c%*c", &option);
+	}
 	
 	if (option == 'q')
 		return false;
 	
-	
-	for (i = 0; i < 24; i++){
-		printf("%s\n", exits[i+5].source->name); 
-		if (exits[i].source->name == player->current_room->name){
+	for (i = 0; i < 25; i++){
+		if (exits[i].source == player->current_room){
 			if (option == exits[i].direction){
 				player->current_room = exits[i].destination;
-				printf("%s\n\n", player->current_room->name);
-				printf("%s\n", player->current_room->desc);
-				getchar();
-			}
-			return true;
-			
+				return true;
+			}			
 		}
 	}
-	return false;
+	printf("I can't go there. There is no path.\n\n");
+	return true;
+	
 }
 
 

@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <string.h>
 
-class Player : public Entity{
+class Player{
 
 public:
-	Room* current_room;
+	char* current_room;
 
 public:
 	void Player::LookRoom(const Room& current_room);

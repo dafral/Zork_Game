@@ -3,8 +3,8 @@
 
 class Entity{
 public:
-	char name[80], desc[300];
-
+	char* name;
+	char* desc;
 
 };
 
