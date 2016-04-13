@@ -6,6 +6,7 @@ public:
 	char* name;
 	char* desc;
 
+	void Entity::Look(const char* entity);
 };
 
 

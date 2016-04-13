@@ -10,7 +10,6 @@ public:
 	char direction;
 	char* destination;
 	char* source;
-
 };
 
 #endif

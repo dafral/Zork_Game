@@ -1,20 +1,15 @@
-#ifndef __PLAYER__
-#define __PLAYER__
+#ifndef __PLAYER_H__
+#define __PLAYER_H__
 
-#include "Room.h"
-#include <stdio.h>
-#include <string.h>
+#include "Entity.h"
+#include "String.h"
 
 class Player{
 
 public:
+	char* inventory = "Empty";
+	char* inventory_desc;
 	char* current_room;
-
-public:
-	void Player::LookRoom(const Room& current_room);
-	void Player::LookDirection();
-	void Player::CheckExits();
-	Player Player::GoDirection(const Room &destination);
 };
 
 #endif
