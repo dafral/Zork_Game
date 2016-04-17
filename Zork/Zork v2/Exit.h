@@ -1,13 +1,13 @@
 #ifndef __EXIT__
 #define __EXIT__
 
-#include "Entity.h"
+#include "World.h"
 
 class Exit : public Entity{
 
 public:
 	bool open;
-	char direction;
+	String direction;
 	char* destination;
 	char* source;
 };

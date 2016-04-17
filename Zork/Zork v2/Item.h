@@ -1,9 +1,8 @@
-#include "Entity.h"
-#include "String.h"
+#include "World.h"
 
 class Item : public Entity {
 public:
-	char* room;
+	String room;
 	char equip;
 	bool pick = true;
 

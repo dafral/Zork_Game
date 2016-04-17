@@ -49,259 +49,267 @@ void World::CreateMap() {
 
 	//exits
 	exits[0].name = "Long hallway";
-	exits[0].desc = "There is a long hallway in front of you.";
 	exits[0].destination = "Cages room";
 	exits[0].source = "Old attic";
-	exits[0].direction = 'e';
+	exits[0].direction = "east";
 
 	exits[1].name = "Long hallway";
-	exits[1].desc = "There is a long hallway in front of you.";
 	exits[1].destination = "Old attic";
 	exits[1].source = "Delivery room";
-	exits[1].direction = 'w';
+	exits[1].direction = "west";
 
 	exits[2].name = "Elevator";
-	exits[2].desc = "You are looking to a very old elevator. Maybe it still works.";
 	exits[2].destination = "Experiments room";
 	exits[2].source = "Delivery room";
-	exits[2].direction = 'e';
+	exits[2].direction = "east";
 
 	exits[3].name = "Big Stairs";
-	exits[3].desc = "There are big wooden stairs. Maybe you can access the top rooms of the building from here.";
 	exits[3].destination = "Stairs room";
 	exits[3].source = "Delivery room";
-	exits[3].direction = 's';
+	exits[3].direction = "south";
 
 	exits[4].name = "Big Stairs";
-	exits[4].desc = "There are big wooden stairs. Maybe you can access the top rooms of the building from here.";
 	exits[4].destination = "Delivery room";
 	exits[4].source = "Stairs room";
-	exits[4].direction = 'n';
+	exits[4].direction = "north";
 
 	exits[5].name = "Wooden Stairs";
-	exits[5].desc = "There are a almost broken wooden stairs in front of you.";
 	exits[5].destination = "Dark room";
 	exits[5].source = "The helper's room";
-	exits[5].direction = 'w';
+	exits[5].direction = "west";
 
 	exits[6].name = "Iron Door";
 	exits[6].destination = "Stretchers room";
 	exits[6].source = "The helper's room";
-	exits[6].direction = 'e';
+	exits[6].direction = "east";
 
 	exits[7].name = "Iron Door";
 	exits[7].destination = "The helper's room";
 	exits[7].source = "Stretchers room";
-	exits[7].direction = 'w';
+	exits[7].direction.string = "west";
 
 	exits[8].name = "Broken Wood Door";
 	exits[8].destination = "Cages room";
 	exits[8].source = "Stretchers room";
-	exits[8].direction = 'n';
+	exits[8].direction = "north";
 
 	exits[9].name = "Broken Wood Door";
 	exits[9].destination = "Stretchers room";
 	exits[9].source = "Cages room";
-	exits[9].direction = 's';
+	exits[9].direction = "south";
 
 	exits[10].name = "Dark Path";
 	exits[10].destination = "Hallway";
 	exits[10].source = "Stretchers room";
-	exits[10].direction = 'e';
+	exits[10].direction = "east";
 
 	exits[11].name = "Ornamented Gold Door";
 	exits[11].destination = "Julia's room";
 	exits[11].source = "Stretchers room";
-	exits[11].direction = 's';
+	exits[11].direction = "south";
 
 	exits[12].name = "Ornamented Gold Door";
 	exits[12].destination = "Stretchers room";
 	exits[12].source = "Julia's room";
-	exits[12].direction = 'n';
+	exits[12].direction = "north";
 
 	exits[13].name = "Dark Path";
 	exits[13].destination = "Stretchers room";
 	exits[13].source = "Hallway";
-	exits[13].direction = 'w';
+	exits[13].direction = "west";
 
 	exits[14].name = "Narrow Corridor";
 	exits[14].destination = "Stairs room";
 	exits[14].source = "Hallway";
-	exits[14].direction = 'e';
+	exits[14].direction = "east";
 
 	exits[15].name = "Narrow Corridor";
 	exits[15].destination = "Hallway";
 	exits[15].source = "Stairs room";
-	exits[15].direction = 'w';
+	exits[15].direction = "west";
 
 	exits[16].name = "Broken Wall";
 	exits[16].destination = "Secret room";
 	exits[16].source = "Stairs room";
-	exits[16].direction = 's';
+	exits[16].direction = "south";
 
 	exits[17].name = "Broken Wall";
 	exits[17].destination = "Stairs room";
 	exits[17].source = "Secret room";
-	exits[17].direction = 'n';
+	exits[17].direction = "north";
 
 	exits[18].name = "Wooden Stairs";
 	exits[18].destination = "The helper's room";
 	exits[18].source = "Dark room";
-	exits[18].direction = 'n';
+	exits[18].direction = "north";
 
 	exits[19].name = "Broken Window";
 	exits[19].destination = "Experiments room";
 	exits[19].source = "Dark room";
-	exits[19].direction = 'e';
+	exits[19].direction = "east";
 
 	exits[20].name = "Broken Window";
 	exits[20].destination = "Dark room";
 	exits[20].source = "Experiments room";
-	exits[20].direction = 'w';
+	exits[20].direction = "west";
 
 	exits[21].name = "Secret Path";
 	exits[21].destination = "Julia's secret room";
 	exits[21].source = "Julia's room";
-	exits[21].direction = 'e';
+	exits[21].direction = "east";
 
 	exits[22].name = "Secret Path";
 	exits[22].destination = "Julia's room";
 	exits[22].source = "Julia's secret room";
-	exits[22].direction = 'w';
+	exits[22].direction = "west";
 
 	exits[23].name = "Hole in the Wall";
 	exits[23].destination = "Experiments room";
 	exits[23].source = "Julia's secret room";
-	exits[23].direction = 'e';
+	exits[23].direction = "east";
 
 	exits[24].name = "Hole in the Wall";
 	exits[24].destination = "Julia's secret room";
 	exits[24].source = "Experiments room";
-	exits[24].direction = 'n';
+	exits[24].direction = "north";
 
 	exits[25].name = "Elevator";
 	exits[25].desc = "You are looking to a very old elevator. Maybe it still works.";
 	exits[25].destination = "Delivery room";
 	exits[25].source = "Experiments room";
-	exits[25].direction = 'e';
+	exits[25].direction = "east";
 
 	//items
-	items[0].name = "Surgery knife";
+	items[0].name = "knife";
 	items[0].desc = "Too small to kill anybody.";
-	items[0].room = "Stretchers room";
-	items[0].equip = 'n';
+	items[0].room.string = "Stretchers room";
 
-
-	items[1].name = "Torch";
+	items[1].name = "torch";
 	items[1].desc = "Maybe you can light dark rooms with this.";
-	items[1].room = "Dark room";
+	items[1].room.string = "Hallway";
 
-	items[2].name = "Stairs key";
+	items[2].name = "key";
 	items[2].desc = "A small rusty key.";
-
-	items[3].name = "Axe";
+	items[2].room.string = "Dark room";
+	
+	items[3].name = "axe";
 	items[3].desc = "It's a bit rusty, but it looks you can use it.";
+	items[3].room.string = "Julia's secret room";
 
-	items[4].name = "Cage Key";
+	items[4].name = "lever";
 	items[4].desc = "A very weird key.";
+	items[4].room.string = "Stairs room";
 
-	items[5].name = "Syringe";
+	items[5].name = "syringe";
 	items[5].desc = "The needle is very sharp.";
+	items[5].room.string = "Experiments room";
 
 	//sets the player in the initial position
-	player->current_room = "Stretchers room";
+	player->current_room.string = "Stretchers room";
+	//player->inventory.string = "Empty";
+
+	for (uint i = 0; i < 3; i++)
+		player->inventory[i].string = "Empty";
 
 	}
 
 void World::LookRoom(const char* room){
-	int i=0;
+	uint i = 0;
 
-	while (room != rooms[i].name) i++;
+	for (; room != rooms[i].name; i++);
 
-	printf("%s\n", rooms[i].name);
+	printf("\n%s\n", rooms[i].name);
 	printf("%s\n", rooms[i].desc);
 	}
 
-void World::PickItem(char* item){
-	int i = 0;
+void World::PickItem(const String &item){
+	bool picked = false;
+	uint j;
 
-	while (item != items[i].name) i++;
+	for (j = 0; j < 3; j++){
+		if (player->inventory[j].string == "Empty")
+			break;
+	}
+	if (j >= 3){
+		printf("You have no space in the inventory.\n");
+		picked = true;
+	}
 	
-	if (player->current_room == items[i].room){
-		if (items[i].pick){
-			if (player->inventory == "Empty"){
-				player->inventory = items[i].name;
-				player->inventory_desc = items[i].desc;
-				items[i].pick = false;
-				printf("You have picked %s!\n", item);
+	for (uint i = 0; i < 6; i++) {
+		if (item == items[i].name){
+			if (player->current_room == items[i].room){
+				if (items[i].pick){
+					if (player->inventory[j].string == "Empty"){
+						player->inventory[j].string = items[i].name;
+						player->inventory_desc = items[i].desc;
+						items[i].pick = false;
+						printf("You have picked %s!\n", item);
+						picked = true;
+					}
+				}
 			}
-			else
-				printf("You have no space in the inventory.\n");
 		}
-		else
-			printf("There is no item called %s here.\n", item);
+	}
+	if (picked == false)
+		printf("There is no item called %s here.\n", item);
+}
+	
+
+
+void World::DropItem(const String &item){
+	bool dropped = false;
+	uint j;
+
+	for (j = 0; j < 3; j++){
+		if (player->inventory[j] == item)
+			break;
 	}
 
-	else
-		printf("There is no item called %s here.\n", item);	
+	for (uint i = 0; i < 6; i++) {
+		if (item == items[i].name){
+			if (player->inventory[j] == item){
+				if (items[i].pick == false){
+					items[i].room.string = player->current_room.string;
+					player->inventory[j].string = "Empty";
+					items[i].pick = true;
+					printf("You have dropped %s.\n", item);
+					dropped = true;
+				}
+				else{
+					printf("You can't do that. There is an item already in the room.\n");
+					dropped = true;
+				}
+			}		
+		}
+	}
+	if (dropped == false)
+		printf("You don't have any item called %s in the inventory.\n", item);
 }
 
-void World::DropItem(char* item){
-	int i = 0;
-
-	while (item != items[i].name) i++;
-
-	if (player->inventory == item){
-		if (!items[i].pick){
-			items[i].room = player->current_room;
-			player->inventory = "Empty";
-			items[i].pick = true;
-			printf("You have dropped %s.\n", item);
-		}
-		else
-			printf("You can't do that. There is an item already in the room.\n");
-	}
-	else
-		printf("You don't have any item called %s in the inventory.\n", item);
-
+void World::LookInventory(const Vector<String> &inv){
+	for (uint i = 0; i < 3; i++)
+		printf("Slot %d: %s\n", i + 1, inv[i]);
 }
 
 bool World::Play(){
 	int i;
-	char option;
+	
+	char copy[30];
+	char* fp = copy;
 
-	LookRoom(player->current_room);
+	LookRoom(player->current_room.string);
+	
+	fgets(copy, 30, stdin);
 
-	//test to try pickitem and dropitem
-	printf("Before taking the item = %s\n", player->inventory);
-	PickItem("Surgery knife");
-	printf("After taking the item = %s\n", player->inventory);
-	PickItem("Surgery knife");
-	DropItem("Surgery knife");
-	printf("After dropping the item = %s\n", player->inventory);
-	DropItem("Surgery knife");
+	if (copy[strlen(copy) - 1] == '\n')
+		copy[strlen(copy) - 1] = '\0';
 	
-	
-	scanf_s("%c%*c", &option);
+	Vector<String> tokens;
+	String option(fp);
 
-	while (option != 'n' && option != 'e' && option != 'w' && option != 's' && option != 'q'){
-		printf("Invalid command. Choose another one.\n");
-		scanf_s("%c%*c", &option);
-	}
-	
-	if (option == 'q')
-		return false;
-	
-	for (i = 0; i < 25; i++){
-		if (exits[i].source == player->current_room){
-			if (option == exits[i].direction){
-				player->current_room = exits[i].destination;
-				return true;
-			}			
-		}
-	}
-	printf("I can't go there. There is no path.\n\n");
-	return true;
+	tokens = option.Tokenize(tokens);
+
+	return CheckOption(tokens);
 	
 }
 

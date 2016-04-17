@@ -1,15 +1,21 @@
 #ifndef __PLAYER_H__
 #define __PLAYER_H__
 
-#include "Entity.h"
-#include "String.h"
+#define MAX_ITEMS 3
 
-class Player{
+#include "World.h"
+
+
+class Player : public Entity{
 
 public:
-	char* inventory = "Empty";
+	Vector<String> inventory;
+	//String inventory;
 	char* inventory_desc;
-	char* current_room;
+	String current_room;
+
 };
+
+
 
 #endif
