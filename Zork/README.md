@@ -50,9 +50,9 @@ The deformity on her face doesn’t let her see anything so she cannot see you unl
 
 
 ##Special feature ("transform")
-In this version of the zork you will be able to transform yourself... in a beast! Of course you will be able to return to your human figure (at least in this version), 
-but each creature have different characteristics. First of all, be careful when you transform yourself into the beast, you will drop all your items! Beasts can't carry items.
+In this version of the zork you will be able to transform yourself... into a beast! Of course you will be able to return to your human figure (at least in this version), 
+but each form have different characteristics. First of all, be careful when you transform yourself into the beast, you will drop all your items! Beasts can't carry items.
 You won't loose them though, you will be able to pick them again whenever you want. The benefit of the beast is you will have claws! You can't drop your claws or unequip them
-(which is very logic, don't you think?)
+(which is very logic, don't you think?).
 
 If you want to go back to your human shape again, don't worry, just use the "transform" command again. You will loose your claws, but you will be able to carry items again.

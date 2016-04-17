@@ -28,7 +28,7 @@ public:
 	void World::EquipItem(const String &item);
 	void World::UnequipItem(const String &item);
 	void World::Transform();
-	bool World::CheckOption(Vector<String>&option);
+	bool World::CheckOption(Vector<String>&option, unsigned int num_words);
 	World::~World();
 	
 		

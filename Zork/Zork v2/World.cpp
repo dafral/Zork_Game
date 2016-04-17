@@ -364,8 +364,12 @@ void World::Transform(){
 	if (player->beast == false){
 		//transforms into a beast, and drops all the items
 		for (uint i = 0; i < 6; i++){
-			if (items[i].pick == false)
+			if (items[i].pick == false){
+				//unequips your item in order to drop it
+				if (items[i].equip == "y")
+					items[i].equip = "n";
 				DropItem(items[i].name);
+			}
 		}
 		items[6].pick = false;
 		items[6].equip = "y";
@@ -388,14 +392,16 @@ void World::Transform(){
 
 
 bool World::Play(){
-	int i;
-	
-	char copy[30];
+	uint i, num_words = 1;
+	char copy[30], c = NULL;
 	char* fp = copy;
 
 	LookRoom(player->current_room.string);
 	
 	fgets(copy, 30, stdin);
+
+	for (i = 0; i < strlen(copy); c = copy[i++])
+		if (c == ' ') num_words++;
 
 	if (copy[strlen(copy) - 1] == '\n')
 		copy[strlen(copy) - 1] = '\0';
@@ -405,7 +411,7 @@ bool World::Play(){
 
 	tokens = option.Tokenize(tokens);
 
-	return CheckOption(tokens);
+	return CheckOption(tokens, num_words);
 	
 }
 

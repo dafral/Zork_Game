@@ -5,7 +5,7 @@ void main(void){
 	World map;
 
 	map.CreateMap();
-	printf("Welcome to David Franco's Zork. Have fun!\n");
+	printf("Welcome to Dafral's Zork. Have fun!\n");
 
 	do {
 		game = map.Play();

@@ -5,6 +5,4 @@ public:
 	char* equip;
 	String room;
 	bool pick = true;
-
-
 };

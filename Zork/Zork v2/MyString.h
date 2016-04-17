@@ -51,31 +51,6 @@ public:
 		return *this;
 	}
 
-
-	const Vector<String> String::Tokenize(Vector<String>&tokens){
-		
-		String newbuffer(length());
-		int i = 0, j = 0;
-
-		do {
-
-			for (j = 0; string[i] != ' ' && string[i] != '\0' && string[i] != '\n '; i++, j++){
-				/*if (string[i] >= 'A' && string[i] <= 'Z')
-					string[i] = string[i] - 32;*/
-				newbuffer.string[j] = string[i];
-			}
-			
-			newbuffer.string[j] = '\0';
-			tokens.push_back(newbuffer.string);
-
-			for (; string[i] == ' '; i++);
-
-		} while (string[i] != '\0');
-
-		return tokens;
-	}
-
-
 	void String::print(){
 
 		printf("%s\n", string);
@@ -112,6 +87,28 @@ public:
 		capacity = strlen(str.string) + 1;
 		string = new char[capacity];
 		strcpy_s(this->string, capacity, str.string);
+	}
+
+
+	const Vector<String> String::Tokenize(Vector<String>&tokens){
+
+		String newbuffer(length());
+		int i = 0, j = 0;
+
+		do {
+
+			for (j = 0; string[i] != ' ' && string[i] != '\0' && string[i] != '\n '; i++, j++){
+				newbuffer.string[j] = string[i];
+			}
+
+			newbuffer.string[j] = '\0';
+			tokens.push_back(newbuffer.string);
+
+			for (; string[i] == ' '; i++);
+
+		} while (string[i] != '\0');
+
+		return tokens;
 	}
 
 
