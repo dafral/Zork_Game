@@ -183,26 +183,32 @@ void World::CreateMap() {
 	items[0].name = "knife";
 	items[0].desc = "Too small to kill anybody.";
 	items[0].room.string = "Stretchers room";
+	items[0].equip = "n";
 
 	items[1].name = "torch";
 	items[1].desc = "Maybe you can light dark rooms with this.";
 	items[1].room.string = "Hallway";
+	items[1].equip = "n";
 
 	items[2].name = "key";
 	items[2].desc = "A small rusty key.";
 	items[2].room.string = "Dark room";
+	items[2].equip = "f";
 	
 	items[3].name = "axe";
 	items[3].desc = "It's a bit rusty, but it looks you can use it.";
 	items[3].room.string = "Julia's secret room";
+	items[3].equip = "n";
 
 	items[4].name = "lever";
 	items[4].desc = "A very weird key.";
 	items[4].room.string = "Stairs room";
+	items[4].equip = "n";
 
-	items[5].name = "syringe";
+	items[5].name = "bag";
 	items[5].desc = "The needle is very sharp.";
 	items[5].room.string = "Experiments room";
+	items[5].equip = "f";
 
 	//sets the player in the initial position
 	player->current_room.string = "Stretchers room";
@@ -269,27 +275,87 @@ void World::DropItem(const String &item){
 		if (item == items[i].name){
 			if (player->inventory[j] == item){
 				if (items[i].pick == false){
-					items[i].room.string = player->current_room.string;
-					player->inventory[j].string = "Empty";
-					items[i].pick = true;
-					printf("You have dropped %s.\n", item);
-					dropped = true;
+					if (items[i].equip == "n"){
+						items[i].room.string = player->current_room.string;
+						player->inventory[j].string = "Empty";
+						items[i].pick = true;
+						printf("You have dropped %s.\n", item);
+						dropped = true;
+					}
+					else{
+						printf("You can't drop items you have equipped.\n");
+						dropped = true;
+					}
 				}
-				else{
-					printf("You can't do that. There is an item already in the room.\n");
-					dropped = true;
-				}
-			}		
+			}
 		}
 	}
 	if (dropped == false)
 		printf("You don't have any item called %s in the inventory.\n", item);
 }
 
-void World::LookInventory(const Vector<String> &inv){
-	for (uint i = 0; i < 3; i++)
-		printf("Slot %d: %s\n", i + 1, inv[i]);
+
+
+void World::LookInventory(){
+	for (uint i = 0; i < 3; i++){
+		printf("Slot %d: %s\n", i + 1, player->inventory[i].string);
+	}
 }
+
+
+void World::EquipItem(const String &item){
+	bool equiped = false;
+
+	for (uint i = 0; i < 6; i++){
+		if (items[i].equip == "y"){
+			if (item == items[i].name);
+			else
+				UnequipItem(items[i].name);
+		}
+	}
+
+	for (uint i = 0; i < 6; i++) {
+		if (item == items[i].name){
+			if (items[i].pick == false){
+				if (items[i].equip == "n"){
+					items[i].equip = "y";
+					player->equipment.string = items[i].name;
+					printf("You have equipped %s.\n", item);
+					equiped = true;
+				}
+				else if (items[i].equip == "y"){
+					printf("This item is already equipped.\n");
+					equiped = true;
+				}
+				else if (items[i].equip == "f"){
+					printf("This item can't be equipped.\n");
+					equiped = true;
+				}
+			}
+		}
+	}
+	if (equiped == false)
+		printf("You only can equip items that are in your inventory.\n");
+}
+
+
+void World::UnequipItem(const String &item){
+	bool equiped = false;
+
+	for (uint i = 0; i < 6; i++){
+		if (item == items[i].name){
+			if (items[i].equip == "y"){
+				items[i].equip = "n";
+				player->equipment.string = "Empty";
+				printf("You have unequipped %s.\n", item);
+				equiped = true;
+			}
+		}
+	}
+	if (equiped == false)
+		printf("You don't have this item equiped.\n");
+}
+
 
 bool World::Play(){
 	int i;

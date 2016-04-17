@@ -24,7 +24,9 @@ public:
 	void World::LookRoom(const char* room);
 	void World::PickItem(const String &item);
 	void World::DropItem(const String &item);
-	void World::LookInventory(const Vector<String> &inv);
+	void World::LookInventory();
+	void World::EquipItem(const String &item);
+	void World::UnequipItem(const String &item);
 	bool World::CheckOption(Vector<String>&option);
 	World::~World();
 	

@@ -2,8 +2,8 @@
 
 class Item : public Entity {
 public:
+	char* equip;
 	String room;
-	char equip;
 	bool pick = true;
 
 

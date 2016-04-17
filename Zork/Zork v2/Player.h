@@ -10,7 +10,7 @@ class Player : public Entity{
 
 public:
 	Vector<String> inventory;
-	//String inventory;
+	String equipment = "Empty";
 	char* inventory_desc;
 	String current_room;
 

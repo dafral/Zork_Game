@@ -34,10 +34,20 @@ bool World::CheckOption( Vector<String>&option){
 
 	else if (option[0] == "look"){
 		if (option[1] == "inventory"){
-			LookInventory(player->inventory);
+			LookInventory();
 			return true;
 		}
 		else if (option[1] == "room")
+		return true;
+	}
+
+	else if (option[0] == "equip"){
+		EquipItem(option[1]);
+		return true;
+	}
+
+	else if (option[0] == "unequip"){
+		UnequipItem(option[1]);
 		return true;
 	}
 
