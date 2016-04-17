@@ -4,7 +4,7 @@
 World::World(){
 	rooms = new Room[12];
 	exits = new Exit[26];
-	items = new Item[6];
+	items = new Item[7];
 	player = new Player;
 }
 
@@ -210,10 +210,13 @@ void World::CreateMap() {
 	items[5].room.string = "Experiments room";
 	items[5].equip = "f";
 
+	//this item is only available when you are a beast
+	items[6].name = "claws";
+
 	//sets the player in the initial position
 	player->current_room.string = "Stretchers room";
-	//player->inventory.string = "Empty";
 
+	//the player starts with all the inventory empty
 	for (uint i = 0; i < 3; i++)
 		player->inventory[i].string = "Empty";
 
@@ -306,18 +309,18 @@ void World::LookInventory(){
 void World::EquipItem(const String &item){
 	bool equiped = false;
 
-	for (uint i = 0; i < 6; i++){
-		if (items[i].equip == "y"){
-			if (item == items[i].name);
-			else
-				UnequipItem(items[i].name);
-		}
-	}
-
 	for (uint i = 0; i < 6; i++) {
 		if (item == items[i].name){
 			if (items[i].pick == false){
 				if (items[i].equip == "n"){
+					//unequip the item you have equipped to equip the new one in case you have something equiped
+					for (uint j = 0; j < 6; j++){
+						if (items[j].equip == "y"){
+							if (item == items[j].name);
+							else
+								UnequipItem(items[j].name);
+						}
+					}
 					items[i].equip = "y";
 					player->equipment.string = items[i].name;
 					printf("You have equipped %s.\n", item);
@@ -354,6 +357,33 @@ void World::UnequipItem(const String &item){
 	}
 	if (equiped == false)
 		printf("You don't have this item equiped.\n");
+}
+
+
+void World::Transform(){
+	if (player->beast == false){
+		//transforms into a beast, and drops all the items
+		for (uint i = 0; i < 6; i++){
+			if (items[i].pick == false)
+				DropItem(items[i].name);
+		}
+		items[6].pick = false;
+		items[6].equip = "y";
+		player->inventory[0].string = items[6].name;
+		player->equipment.string = items[6].name;
+		player->beast = true;
+		printf("You are now a very powerful beast! But be careful, beasts can't carry items.\n");
+	}
+	else{
+		items[6].pick = true;
+		items[6].equip = "f";
+		//removes the claws from the inventory 
+		for (uint i = 0; i < 3; i++)
+			player->inventory[i].string = "Empty";
+		player->beast = false;
+		printf("You are a human, you can carry items again. You have lost you claws though.\n");
+	}
+
 }
 
 

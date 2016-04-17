@@ -11,9 +11,9 @@ class Player : public Entity{
 public:
 	Vector<String> inventory;
 	String equipment = "Empty";
-	char* inventory_desc;
 	String current_room;
-
+	char* inventory_desc;
+	bool beast = false;
 };
 
 

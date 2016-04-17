@@ -5,8 +5,13 @@ bool World::CheckOption( Vector<String>&option){
 	uint i;
 	
 
-	if (option[0] == "quit" || option[0] == "q")
+	if (option[0] == "quit")
 		return  false;
+
+	if (option[0] == "transform"){
+		Transform();
+		return true;
+	}
 
 	else if (option[0] == "go"){
 
@@ -23,7 +28,10 @@ bool World::CheckOption( Vector<String>&option){
 	}
 
 	else if (option[0] == "pick"){
-		PickItem(option[1]);
+		if (!player->beast)
+			PickItem(option[1]);
+		if (player->beast)
+			printf("Beasts can't pick items. Transform yourself into a human to be able to pick objects.\n");
 		return true;
 	}
 
@@ -47,9 +55,13 @@ bool World::CheckOption( Vector<String>&option){
 	}
 
 	else if (option[0] == "unequip"){
-		UnequipItem(option[1]);
+		if (!player->beast)
+			UnequipItem(option[1]);
+		if (player->beast)
+			printf("You are beast, remember? Don't try to unequip your claws, it's not going to work\n");
 		return true;
 	}
+
 
 	else
 		printf("Invalid command.\n\n");

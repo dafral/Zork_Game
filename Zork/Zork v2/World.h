@@ -27,6 +27,7 @@ public:
 	void World::LookInventory();
 	void World::EquipItem(const String &item);
 	void World::UnequipItem(const String &item);
+	void World::Transform();
 	bool World::CheckOption(Vector<String>&option);
 	World::~World();
 	
